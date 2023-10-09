@@ -1,0 +1,276 @@
+.body{
+  background: black;
+  width: 100vw;
+  height: 100vh;
+}
+/* Reset styles and common styles */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.stext {
+  color: rgb(197, 31, 31);
+}
+
+/* Media Query for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+  /* Common styles for mobile devices */
+  .pclinks {
+    display: none;
+  }
+  
+  .navbar {
+    background-color: #141d26;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: #10171f solid 1px;
+    padding: 1.2rem 5vw;
+    padding-top: 1.5rem;
+    height: 1rem;
+  }
+
+  .navbar li {
+    display: inline-block;
+    margin: 0px 2vw;
+    padding-bottom: 8px;
+  }
+
+  .navbar img {
+    height: 2.3rem;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 750;
+  }
+
+  .navbar a.link:hover {
+    color: rgb(197, 31, 31);
+    transition: 0.3s;
+  }
+
+  .intro {
+    display: flex;
+    align-items: start;
+    height: 40vh;
+  }
+
+  .intro #mypic img {
+    height: 7rem;
+    display: block;
+    margin-top: 13vh;
+    margin-right: 5vw;
+    border-radius: 50%;
+  }
+
+  .intro #myinfo h3 {
+    margin: 8vw 5vw 0vw 6vw;
+    font-size: 4.5vw;
+  }
+
+  .intro #myinfo h1 {
+    font-size: 7vw;
+    margin: 0vw 5vw 0vw 6vw;
+  }
+
+  .intro #myinfo p {
+    margin: 0vw 5vw 0vw 6vw;
+    font-weight: 250;
+  }
+
+  .sociallinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0vw 5vw;
+  }
+
+  .left,
+  .right,
+  .left a,
+  .right a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 2;
+  }
+
+  .image img {
+    display: block;
+    margin: 0 auto;
+    height: 45px;
+    margin-bottom: 5px;
+  }
+
+  .right_margin,
+  .left_margin {
+    margin-bottom: 5vh;
+  }
+}
+
+/* Media Query for screens with a minimum width of 768px */
+@media (min-width: 768px) {
+  /* Common styles for larger screens */
+  .navbar {
+    background-color: #141d26;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5vw 1.5rem 5vw;
+    height: 1rem;
+  }
+
+  .navbar li {
+    display: inline-block;
+    margin: 0px 2vw;
+    padding-bottom: 8px;
+  }
+
+  .navbar img {
+    height: 2.3rem;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 750;
+  }
+
+  a.link:hover {
+    color: rgb(197, 31, 31);
+    transition: 0.3s;
+  }
+
+  .intro {
+    display: flex;
+    align-items: start;
+    position: relative;
+  }
+
+  .intro #mypic img {
+    height: 12rem;
+    display: block;
+    margin-top: 8rem;
+    border-radius: 50%;
+    margin-right: 4rem;
+    margin-left: 6rem;
+  }
+
+  .intro #myinfo h3 {
+    margin: 3vw 5vw 0vw 6vw;
+    font-size: 4.5vw;
+  }
+
+  .intro #myinfo h1 {
+    font-size: 7vw;
+    margin: 0vw 5vw 0vw 6vw;
+  }
+
+  .intro #myinfo p {
+    margin: 2vw 5vw 2vw 6.5vw;
+    font-weight: 400;
+    width: 750px;
+  }
+
+  .sociallinks {
+    display: none;
+  }
+
+  .pclinks {
+    display: flex;
+  }
+
+  .pclinks ul {
+    margin: 0 0 0 7vw;
+    padding: 0;
+  }
+
+  .pclinks li {
+    display: inline-block;
+  }
+
+  .pclinks img {
+    width: 50px;
+    margin: 2rem;
+  }
+  /* Sliding effect for Group 1 elements (left to right) */
+.navbar img,
+.intro h3,
+.intro h1,
+.intro p,
+.right,
+.pclinks {
+  transform: translateX(-100%);
+  animation: slideRight 1s ease-in-out forwards;
+}
+
+/* Define the sliding animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Sliding effect for Group 2 elements (right to left) */
+.navbar li,
+.navbar a,
+#mypic img,
+.image img,
+.left_margin,
+.right_margin {
+  transform: translateX(100%);
+  animation: slideLeft 1s ease-in-out forwards;
+}
+
+/* Define the sliding animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Fading in effect for Group 2 elements */
+.navbar li,
+.navbar a,
+#mypic img,
+.image img,
+.left_margin,
+.right_margin {
+  transition: opacity 0.5s ease-in-out;
+}
+}
+.footer{
+  background: #141d26;
+  width: 100vw;
+  height: 1rem;
+  font-weight: 300;
+  text-align: center;
+  position: fixed;
+  bottom: 0vh;
+  font-size: 12px;
+  padding-top: 1.5px;
+}
